@@ -1,7 +1,29 @@
+body {
+    background-color: #508991;
+}
+
+#gif-search-container {
+    background-color: #fcf7f8;
+}
+
 #giftastic-search {
     color: #006989;
 }
 
 #gif-card-header {
     color: #006989;
+}
+
+#gif-emblem {
+    color: #006989;
+}
+
+#addButtons {
+    color: #006989;
+    background-color: #def6ca;
+}
+
+.gif-buttons {
+    color: #006989;
+    background-color: #def6ca;
 }

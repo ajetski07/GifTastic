@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <title>Adam's GifTastic Gif Search</title>
 </head>
 <body>
     <div class="container">
@@ -15,6 +15,8 @@
 
         <div class="jumbotron" style="background-color: #def6ca">
             <h1 id="giftastic-search" class="text-center">Giftastic Gif Search</h1>
+            <br>
+            <h2 id="gif-emblem" class="text-center"><i class="fas fa-photo-video"></i></h2>
         </div>
 
         <div class="row">
@@ -23,7 +25,20 @@
                     <div class="card-header" style="background-color: #def6ca">
                         <h6 id="gif-card-header" class="text-center">It's GIF Time!</h6>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" id="gif-search-container">
+                        <div id="button-area"></div>
+
+                        <br>
+
+                        <form id="search-form">
+                            <label for="search-input">Add your own!</label>
+                            <input type="text" id="search-input">
+                            <input type="submit" id="addButtons" value="Submit">
+                        </form>
+
+                        <br>
+
+                        <div id="gif-searches"></div>
 
                     </div>
                 </div>
@@ -33,5 +48,8 @@
 
 
     </div>
+    <script src="https://kit.fontawesome.com/9a83877916.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./gf-js/gif.js"></script>
 </body>
 </html>
