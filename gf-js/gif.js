@@ -33,7 +33,7 @@ function renderButtons() {
 //On click event for when buttons are clicked//
 $(document).on("click", ".gif-buttons", function () {
     $("#gif-searches").empty();
-    
+
     var type = $(this).data("name");
     //API Query//
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=dFUDrUhVNLX4XGUzOxgqZLF2lbBnGwUA&limit=10";
@@ -76,6 +76,8 @@ $(document).on("click", ".gif-buttons", function () {
 
             //add image class//
             image.addClass("gifImage");
+
+            p.addClass("gifRating");
 
             //appending the rating/image to the search div//
             searchDiv.append(p);
