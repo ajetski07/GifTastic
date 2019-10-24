@@ -1,5 +1,6 @@
 body {
     background-color: #508991;
+    font-family: "Montserrat", "Open San", "Roboto";
 }
 
 #gif-search-container {
@@ -26,4 +27,8 @@ body {
 .gif-buttons {
     color: #006989;
     background-color: #def6ca;
+}
+
+#input-text {
+    color: #006989;
 }
