@@ -32,6 +32,8 @@ function renderButtons() {
 
 //On click event for when buttons are clicked//
 $(document).on("click", ".gif-buttons", function () {
+    $("#gif-searches").empty();
+    
     var type = $(this).data("name");
     //API Query//
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=dFUDrUhVNLX4XGUzOxgqZLF2lbBnGwUA&limit=10";
@@ -57,7 +59,7 @@ $(document).on("click", ".gif-buttons", function () {
 
             //variable for both still and animated//
             var animated = response.data[i].images.fixed_height.url;
-            var still = response.data[i].images.fixed_height.url;
+            var still = response.data[i].images.fixed_height_still.url;
 
             //creating image ellement to dump the gifs into//
             var image = $("<img>");
@@ -72,17 +74,15 @@ $(document).on("click", ".gif-buttons", function () {
             //still version will appear on the page first//
             image.attr("data-state", "still");
 
+            //add image class//
+            image.addClass("gifImage");
+
             //appending the rating/image to the search div//
             searchDiv.append(p);
             searchDiv.append(image);
 
             //appending everything to the gif-searches div in the html//
             $("#gif-searches").append(searchDiv);
-
-
-
-
-
 
         };
 
@@ -91,6 +91,23 @@ $(document).on("click", ".gif-buttons", function () {
 
     console.log(type);
 });
+
+$(document).on("click", ".gifImage", function(){
+    var state = $(this).attr("data-state");
+
+    if(state === "still") {
+        $(this).attr("src", $(this).data("animated"));
+        $(this).attr("data-state", "animated");
+    }
+
+    else {
+        $(this).attr("src", $(this).data("still"));
+        $(this).attr("data-state", "still");
+    }
+
+
+
+})
 
 //Click event for adding new buttons to our array//
 $("#addButtons").on("click", function (event) {
@@ -106,8 +123,7 @@ $("#addButtons").on("click", function (event) {
     //calling the render buttons fucntion to run through the array and render original and new buttons//
     renderButtons();
 
-
-})
+});
 
 //calling render buttons function to show initial buttons on page//
 renderButtons();
