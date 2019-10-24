@@ -15,6 +15,10 @@ body {
     color: #006989;
 }
 
+#gif-card-footer {
+    color: #006989
+}
+
 #gif-emblem {
     color: #006989;
 }
@@ -22,11 +26,13 @@ body {
 #addButtons {
     color: #006989;
     background-color: #def6ca;
+    margin: 5px;
 }
 
 .gif-buttons {
     color: #006989;
     background-color: #def6ca;
+    margin: 5px;
 }
 
 #input-text {

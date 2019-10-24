@@ -31,20 +31,20 @@ function renderButtons() {
 };
 
 //On click event for when buttons are clicked//
-$(document).on("click", ".gif-buttons", function() {
+$(document).on("click", ".gif-buttons", function () {
     var type = $(this).data("name");
     //API Query//
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=dFUDrUhVNLX4XGUzOxgqZLF2lbBnGwUA&limit=10";
-    
+
     //API call//
     $.ajax({
-        url:queryURL, 
+        url: queryURL,
         method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
 
-            console.log(response);
-            //For Loop for the response data//
-            for(var i = 0; i < response.data.length; i++);
+        console.log(response);
+        //For Loop for the response data//
+        for (var i = 0; i < response.data.length; i++) {
 
             //creating a new div for the search items to go into//
             var searchDiv = $("<div class='search-items'>");
@@ -57,7 +57,7 @@ $(document).on("click", ".gif-buttons", function() {
 
             //variable for both still and animated//
             var animated = response.data[i].images.fixed_height.url;
-            var still = response.data[i].image.fixed_height.url;
+            var still = response.data[i].images.fixed_height.url;
 
             //creating image ellement to dump the gifs into//
             var image = $("<img>");
@@ -79,18 +79,26 @@ $(document).on("click", ".gif-buttons", function() {
             //appending everything to the gif-searches div in the html//
             $("#gif-searches").append(searchDiv);
 
-        });
+
+
+
+
+
+        };
+
+    });
 
 
     console.log(type);
 });
 
 //Click event for adding new buttons to our array//
-$("#addButtons").on("click", function(event) {
+$("#addButtons").on("click", function (event) {
     event.preventDefault();
 
     //grabs the input from the text box//
-    var newButton = $("seach-input").val().trim();
+    var newButton = $("#search-input").val().trim()
+    
 
     //adding our new search to the buttons array//
     buttons.push(newButton);
