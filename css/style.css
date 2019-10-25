@@ -27,12 +27,24 @@ body {
     color: #006989;
     background-color: #def6ca;
     margin: 5px;
+    border-radius: 4px;
+}
+
+#addButtons:hover {
+    background-color: #006989;
+    color: #def6ca;
 }
 
 .gif-buttons {
     color: #006989;
     background-color: #def6ca;
     margin: 5px;
+    border-radius: 4px;
+}
+
+.gif-buttons:hover {
+    background-color: #006989;
+    color: #def6ca;
 }
 
 #input-text {
